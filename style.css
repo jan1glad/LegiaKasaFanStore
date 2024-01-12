@@ -101,19 +101,43 @@ button{
     margin-left: 11px;
 }
 
-#wartosc5, #wartosc2, #wartosc1{
+#wartosc5, #wartosc2{
     margin-left: 6px;
 }
-#ile_gotowka_5, #ile_gotowka_2, #ile_gotowka_1{
-    margin-left: 14px;
+#ile_gotowka_5, #ile_gotowka_2{
+    margin-left: 18px;
 }
 
-#wartosc20, #wartosc10{
+#wartosc1{
+    margin-left: 8px;
+}
+
+#ile_gotowka_1{
+    margin-left: 19px;
+}
+
+#wartosc20{
     margin-left: 3px;
 }
-#ile_gotowka_20, #ile_gotowka_10{
-    margin-left: 10px;
+#ile_gotowka_20{
+    margin-left: 11px;
 }
+
+#wartosc10{
+    margin-left: 5px;
+}
+
+#ile_gotowka_10{
+    margin-left: 12px;
+}
+
+#wartosc0_10{
+    margin-left: 3px;
+}
+#ile_gotowka_0_10{
+    margin-left: 1px;
+}
+
 #oblicz{
     margin-left: 20px;
 }
