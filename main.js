@@ -322,6 +322,7 @@ function legia(){
 
     // for(let i=0;i<array.length;i++) {
     // document.getElementById(array[i]).innerHTML = localStorage.getItem(array[i])
+    document.getElementById('piecsetIle').innerHTML = localStorage.getItem('piecsetIle')
     document.getElementById('dwiescieIle').innerHTML = localStorage.getItem('dwiescieIle')
     document.getElementById('stoIle').innerHTML = localStorage.getItem('stoIle')
     document.getElementById('piecdziesiatIle').innerHTML = localStorage.getItem('piecdziesiatIle')
