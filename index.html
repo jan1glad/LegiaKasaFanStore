@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+<script src='main.js'></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Podsumowanie Dnia</title>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Work+Sans&display=swap');
+
+  body {
+    background: rgb(148,187,233);
+    background: linear-gradient(90deg, rgba(148,187,233,1) 68%, rgba(174,238,206,1) 99%); }</style>
+<body onload="onLoadBody()">
+<section id="jeden">
+  <select id="kasa">
+  </select>
+
+  <p id="data"></p>
+  <p id="plusLubMinus"></p>
+</section>
+<section id="dwa">
+  <label id="wartoscRano">Rano
+    <input type="number" id="ileRano" min="0" oninput="zliczanieInnychWartosci()"><p id="wynikRano"></p>
+  </label>
+  <br>
+  <br>
+
+  <label id="wartoscKorekty">Korekty
+    <input type="number" id="ileKorekty" min="0" oninput="zliczanieInnychWartosci()"><p id="wynikKorekty"></p>
+  </label>
+  <br>
+  <br>
+
+  <label id="fakturyWartosc">Faktury
+    <input type="number" id="ileFaktury" min="0" oninput="zliczanieInnychWartosci()"><p id="wynikFaktury"></p>
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartoscWolt">Wolt
+    <input type="number" id="ileWolt" min="0" oninput="zliczanieGotowkiDuzeBanknoty(),zliczanieInnychWartosci()"><p id="wynikWolt"></p>
+  </label>
+
+  <br>
+  <br>
+
+
+  <label id="bonyWartosc">Bony
+    <input type="number" id="ileBony" min="0" oninput="zliczanieGotowkiDuzeBanknoty(),zliczanieInnychWartosci()"><p id="wynikBony"></p>
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartosc500">500 x
+    <input type="number" id="ile_gotowka_500" min="0" oninput="zliczanieGotowkiDuzeBanknoty()"><p id="wynik_gotowka_500"></p>
+
+
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartosc200">200 x
+    <input type="number" id="ile_gotowka_200" min="0" oninput="zliczanieGotowkiDuzeBanknoty()"><p id="wynik_gotowka_200"></p>
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartosc100">100 x
+    <input type="number" id="ile_gotowka_100"  min="0" oninput="zliczanieGotowkiDuzeBanknoty()"><p id="wynik_gotowka_100"></p>
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartosc50">50 x
+    <input type="number" id="ile_gotowka_50" min="0" oninput="zliczanieGotowkiDuzeBanknoty()"><p id="wynik_gotowka_50"></p>
+
+  </label>
+
+  <br>
+  <br>
+
+  <label id="valueBanknoty">Razem
+    <p id="wartoscRazemDuzeBanknoty"></p>
+  </label>
+</section>
+<br>
+<br>
+<section id="cztery">
+  <label id="wartosc20">20 x
+    <input type="number" id="ile_gotowka_20" min="0" oninput="zliczanieGotowkiMaleBanknoty_Monety()"><p id="wynik_gotowka_20"></p>
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartosc10">10 x
+    <input type="number" id="ile_gotowka_10" min="0" oninput="zliczanieGotowkiMaleBanknoty_Monety()"><p id="wynik_gotowka_10"></p>
+
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartosc5">5 x
+    <input type="number" id="ile_gotowka_5" min="0" oninput="zliczanieGotowkiMaleBanknoty_Monety()"><p id="wynik_gotowka_5"></p>
+
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartosc2">2 x
+    <input type="number" id="ile_gotowka_2" min="0" oninput="zliczanieGotowkiMaleBanknoty_Monety()"><p id="wynik_gotowka_2"></p>
+
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartosc1">1 x
+    <input type="number" id="ile_gotowka_1" min="0" oninput="zliczanieGotowkiMaleBanknoty_Monety()"><p id="wynik_gotowka_1"></p>
+
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartosc0_50">0,50 x
+    <input type="number" id="ile_gotowka_0_50" min="0" oninput="zliczanieGotowkiMaleBanknoty_Monety()"><p id="wynik_gotowka_0_50"></p>
+
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartosc0_20">0,20 x
+    <input type="number" id="ile_gotowka_0_20" min="0" oninput="zliczanieGotowkiMaleBanknoty_Monety()"><p id="wynik_gotowka_0_20"></p>
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartosc0_10">0,10 x
+    <input type="number" id="ile_gotowka_0_10" min="0" oninput="zliczanieGotowkiMaleBanknoty_Monety()"><p id="wynik_gotowka_0_10"></p>
+  </label>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <label id="wartoscMonety">Razem
+    <p id="wartoscRazemMaleBanknotyMonety"></p>
+  </label>
+</section>
+<section id="piec">
+
+  <label id="wartoscNaleznosc">Podaj Należność:
+    <input min="0" type="number" id="jakaNaleznosc" >
+  </label>
+
+  <br>
+  <br>
+
+  <label id="wartoscPodsumowanie">Podaj Podsumowanie:
+    <input min="0" type="number" id="jakiePodsumowanie" >
+
+  </label>
+  <button id="oblicz" onclick="obliczanieRaportu(), template()">Oblicz</button>
+
+  <br>
+  <br>
+  <label id="wartoscRazemCalejGotowki">Razem Gotówki
+    <p id="razemCaloscGotowki"></p>
+  </label>
+  <br>
+  <br>
+
+  <label id="raportCalosc">Raport
+    <p id="obliczonyRaport"></p>
+  </label>
+</section>
+<section id="szesc">
+  <form action="wyglad.html">
+    <input id="drukuj" value="Drukuj" type="submit" onclick="podglad() ">
+  </form>
+</section>
+
+
+</body>
+</html>
+

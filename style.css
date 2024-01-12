@@ -1,0 +1,124 @@
+
+#jeden {
+    grid-column: 1 / span 2;
+}
+
+#dwa {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#trzy {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#cztery {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#piec {
+    grid-column: 1;
+    grid-row: 3;
+}
+#szesc {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+section {
+    padding: 10px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+p{
+    text-align: center;
+    display: inline;
+    margin-left: 20px;
+}
+input{
+    width: 70px;
+    background: #e7f1f0;
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Work Sans', sans-serif;
+}
+body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Work Sans', sans-serif;
+}
+
+button{
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Work Sans', sans-serif;
+}
+
+#drukuj{
+    width: 100%;
+    height: 150px;
+}
+
+#ileRano{
+    margin-left: 10px;
+}
+#wartoscRano{
+    margin-left: 10px;
+}
+#ileFaktury{
+    margin-left: 3px;
+}
+#wartoscFaktury{
+    margin-left: 3px;
+}
+#ileWolt{
+    margin-left: 12px;
+}
+#wartoscWolt{
+    margin-left: 9px;
+}
+#bonyWartosc{
+    margin-left: 7px;
+}
+#ileBony{
+    margin-left: 11px;
+}
+
+#wartosc500, #wartosc200, #wartosc100{
+    margin-left: 5px;
+}
+#ile_gotowka_500, #ile_gotowka_200, #ile_gotowka_100{
+    margin-left: 9px;
+}
+
+#wartosc50{
+    margin-left: 10px;
+}
+
+#ile_gotowka_50{
+    margin-left: 11px;
+}
+
+#wartosc5, #wartosc2, #wartosc1{
+    margin-left: 6px;
+}
+#ile_gotowka_5, #ile_gotowka_2, #ile_gotowka_1{
+    margin-left: 14px;
+}
+
+#wartosc20, #wartosc10{
+    margin-left: 3px;
+}
+#ile_gotowka_20, #ile_gotowka_10{
+    margin-left: 10px;
+}
+#oblicz{
+    margin-left: 20px;
+}
+
+
+
+
+

@@ -1,0 +1,345 @@
+<!-- template.html -->
+
+<!DOCTYPE html>
+
+<html lang="pl">
+<script src='main.js'></script>
+
+
+<link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <title>&copy; Jan Gładykowski </title>
+</head>
+
+<body onload="legia(); lol()">
+<style>
+  body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.base {
+  width: 400px;
+  height: 0px;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  flex: 1;
+  padding: 0.1px;
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+}
+
+.values {
+  background-color: white;
+}
+p{
+  text-align: center;
+}
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 90px
+}
+@page { size: a4; margin-top: 5px; margin-bottom: 5px;  margin-right: 360px; }
+html  { background-color: #FFFFFF;  }
+</style>
+<div class="container">
+  <div class="base">
+
+    <div class="row">
+      <div class="column values">
+        <p>Współczynnik</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" ></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="wspolczynnikValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>Data</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" ></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="dataValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>Kasa</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" ></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="kasaValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>Rano</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" ></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="ranoValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>Korekty</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" ></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="korektyValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>Faktury</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" ></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="fakturyValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>Wolt</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" ></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="woltValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>Bony</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" ></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="bonyValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>500 zł</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" id="piecsetIle"></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="piecsetValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>200 zł</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" id="dwiescieIle"></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="dwiescieValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>100 zł</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" id="stoIle"></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="stoValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>50 zł</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" id="piecdziesiatIle"></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="piecdziesiatValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>Razem</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" ></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="razemDuzeValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>20 zł</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" id="dwadziesciaIle"></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="dwadziesciaValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>10 zł</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" id="dziesiecIle"></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="dziesiecValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>5 zł</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" id="piecIle"></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="piecValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>2 zł</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" id="dwaIle"></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="dwaValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>1 zł</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" id="jedenIle"></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="jedenValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>0,50 gr</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" id="grosze50Ile"></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="grosze50Value"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>0,20 gr</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" id="grosze20Ile"></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="grosze20Value"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>0,10 gr</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" id="grosze10Ile"></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="grosze10Value"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>Razem</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" ></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="razemMaleValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>Razem Got</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" ></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="razemCaloscValue"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column values">
+        <p>Raport</p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 45%" ></p>
+      </div>
+      <div class="column values">
+        <p style="margin-left: 20%" id="raportValue"></p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<!--{#<button style="margin-top: 400px">Legia</button>#}-->
+<!--{#<footer>&copy; JG</footer>#}-->
+</body>
+</html>
