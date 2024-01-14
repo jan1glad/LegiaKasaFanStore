@@ -16,6 +16,7 @@
 #cztery {
     grid-column: 2;
     grid-row: 2;
+    position: relative;
 }
 
 #piec {
@@ -26,6 +27,20 @@
     grid-column: 2;
     grid-row: 3;
 }
+
+
+
+#legia-img {
+    position: absolute;
+    display: inline-block;
+    text-align: right;
+    float: right;
+    height: 170px;
+    width: 140px;
+    right: 0;
+    margin-right: 14px;
+}
+
 
 section {
     padding: 10px;
@@ -141,6 +156,11 @@ button{
 #oblicz{
     margin-left: 20px;
 }
+
+
+
+
+/* Rest of your existing CSS */
 
 
 

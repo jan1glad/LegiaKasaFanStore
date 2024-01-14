@@ -55,6 +55,7 @@ function dataObecna() {
     console.log(date);
 
     document.getElementById("data").innerHTML = date;
+    return date;
 }
 
 
@@ -211,7 +212,7 @@ function wspolczynnikDnia(){
         plusLubMinus.style.color = "green";
     }else if (roznica<0){
         plusLubMinus.innerHTML = `${roznica.toFixed(2)} zł`;
-        plusLubMinus.style.color = "#ff6162";
+        plusLubMinus.style.color = "#fa0606";
     }else {
         plusLubMinus.innerHTML = `${roznica.toFixed(2)} zł`;
     }
@@ -342,6 +343,7 @@ function lol(){
     window.onafterprint = (event) => {
         alert('W końcu do domu!');
     };
+
 }
 // let myVariable = 'Hello from myModule!';
 //
