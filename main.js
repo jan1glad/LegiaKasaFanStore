@@ -235,7 +235,7 @@ function podglad(){
 //
     selectKasa = document.getElementById('kasa').value;
 
-    
+
     localStorage.setItem('dataValue', date)
     localStorage.setItem('kasaValue', selectKasa);
     localStorage.setItem('ranoValue', ileRano);
@@ -345,8 +345,28 @@ function legia(){
 }
 function lol(){
     window.print();
+
+    let wiadomosci = [
+        "Czas odpocząć! Zrobiłeś świetną pracę dziś, teraz zasługujesz na zasłużony odpoczynek w domu!",
+        "Brawo! Twój wysiłek dzisiaj był niesamowity. Teraz możesz cieszyć się zasłużonym spokojem w domu.",
+        "Zamknij komputer i złap oddech! Dziś byłeś niesamowity, teraz czas na relaks w domowym zaciszu.",
+        "W końcu koniec dnia! Świetnie pracowałeś, teraz relaks w domu czeka na Ciebie.",
+        "Zadania zrobione! Zasłużyłeś na spokojny wieczór w domu. Odpocznij i naładuj baterie!",
+        "Kolejny udany dzień pracy za Tobą! Teraz czas na zasłużony odpoczynek w domowym zaciszu.",
+        "Dziękuję za Twoje zaangażowanie! Zamykamy sklep, a Ty możesz spędzić resztę dnia w domowym cieple.",
+        "Odpoczynek czeka! Dzisiaj był naprawdę produktywny dzień, teraz zrelaksuj się w domu.",
+        "Dobra robota! Czas na zasłużony relaks w domu. Odpocznij i przygotuj się na kolejny udany dzień jutro.",
+        "Zamykamy drzwi sklepu, a Ty możesz spokojnie wrócić do domu i odpocząć po udanym dniu pracy.",
+        "Twój trud się opłacił! Zakończ pracę z uśmiechem, teraz czeka Cię zasłużony odpoczynek w domu.",
+        "Zadania wykonane! Teraz możesz wrócić do domu i cieszyć się spokojem wieczoru.",
+        "Koniec pracy na dziś! Zasłużyłeś na relaks w domu po pełnym wyzwaniach dniu. Odpocznij dobrze!",
+        "W końcu do domu!"
+    ];
+
+    let losowyIndex = Math.floor(Math.random() * wiadomosci.length);
+
     window.onafterprint = (event) => {
-        alert('W końcu do domu!');
+        alert(wiadomosci[losowyIndex]);
     };
 
 }
