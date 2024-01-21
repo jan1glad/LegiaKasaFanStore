@@ -69,7 +69,7 @@ function kasaOptions() {
     }
 
     selectKasa.value = "KASA4";
-    selectKasa = document.getElementById('kasa').value;
+
 }
 
 function zliczanieInnychWartosci(){
@@ -216,6 +216,7 @@ function wspolczynnikDnia(){
     }else {
         plusLubMinus.innerHTML = `${roznica.toFixed(2)} zł`;
     }
+
 }
 
 
@@ -231,6 +232,10 @@ function podglad(){
 //         localStorage.setItem(id[i], tabela[i])
 //         console.log(id[i], tabela[i])
 //     }
+//
+    selectKasa = document.getElementById('kasa').value;
+
+    
     localStorage.setItem('dataValue', date)
     localStorage.setItem('kasaValue', selectKasa);
     localStorage.setItem('ranoValue', ileRano);
