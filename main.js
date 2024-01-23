@@ -1,4 +1,5 @@
 
+let doPrzodu =1 , doTylu =1;
 
 let sumaDuza = 0, sumaMala=0;
 
@@ -41,7 +42,7 @@ let tabela = [date,selectKasa,ileRano,ileKorekty,ileBony,ileWolt,ile_gotowka_500
 function onLoadBody(){
     dataObecna();
     kasaOptions();
-
+    document.getElementById("datyLegia").style.display = "none";
     //zliczanieGotowkiDuzeBanknoty();
     // zliczanieGotowkiMaleBanknoty_Monety();
     //zliczanieInnychWartosci();
@@ -51,13 +52,54 @@ function onLoadBody(){
 
 
 function dataObecna() {
-    date = new Date().toLocaleDateString("pl-PL");
-    console.log(date);
+    date = new Date().toLocaleDateString("pl-PL",{
+            day: "numeric",
+            month: "numeric",
+            year: "numeric"
+    });
 
+    //console.log(date);
+    doTylu = 1;
     document.getElementById("data").innerHTML = date;
     return date;
 }
 
+function zmienDate(){
+    document.getElementById("zmienDate").style.display = "none";
+    document.getElementById("datyLegia").style.display = "initial";
+
+
+}
+
+function dzienDoPrzodu(){
+    let today = new Date();
+    let tomorrow = new Date();
+
+    tomorrow.setDate(today.getDate()+1);
+
+    let jutro = new Date(tomorrow).toLocaleDateString("pl-PL",{
+        day: "numeric",
+        month: "numeric",
+        year: "numeric"
+    });
+    date = jutro;
+    document.getElementById("data").innerHTML = jutro;
+}
+
+function dzienDoTylu(){
+    let today = new Date();
+    let tomorrow = new Date();
+
+    tomorrow.setDate(today.getDate()-doTylu);
+    doTylu++;
+    let wczoraj = new Date(tomorrow).toLocaleDateString("pl-PL",{
+        day: "numeric",
+        month: "numeric",
+        year: "numeric"
+    });
+    date = wczoraj;
+    document.getElementById("data").innerHTML = wczoraj;
+}
 
 function kasaOptions() {
     selectKasa = document.getElementById('kasa');
@@ -216,6 +258,7 @@ function wspolczynnikDnia(){
     }else {
         plusLubMinus.innerHTML = `${roznica.toFixed(2)} zł`;
     }
+
 
 }
 

@@ -28,7 +28,16 @@
     grid-row: 3;
 }
 
+#zmienDate{
+    margin-top: 10px;
+}
 
+#dzienDoTylu{
+    margin-top: 10px;
+}
+#dataObecna{
+    margin-top: 10px;
+}
 
 #legia-img {
     position: absolute;
